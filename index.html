@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Axon AI Support – Official License</title>
+
+<meta name="description" content="Offizielle Lizenz- und Nutzungsbedingungen von Axon AI Support.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #05060a;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(91, 72, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(0, 132, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(95, 55, 255, 0.12), transparent 35%);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.12;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #8d82ff;
+    border-radius: 50%;
+    box-shadow: 0 0 14px #7165ff;
+    animation: moveParticle linear infinite;
+}
+
+@keyframes moveParticle {
+    from {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+.navbar {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1150px, calc(100% - 30px));
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(7, 8, 14, 0.78);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-weight: 900;
+}
+
+.logo-box {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7665ff, #2f8dff);
+    box-shadow: 0 0 30px rgba(95, 85, 255, 0.35);
+}
+
+.logo-text span {
+    display: block;
+    color: #727b91;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 5px;
+}
+
+.nav-links a {
+    color: #aeb5c8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: white;
+    background: rgba(255,255,255,0.06);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 20px 100px;
+}
+
+.hero-content {
+    max-width: 950px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    background: rgba(105, 86, 255, 0.09);
+    border: 1px solid rgba(125, 105, 255, 0.25);
+    color: #bdb5ff;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 28px;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8474ff;
+    box-shadow: 0 0 14px #8474ff;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -7px;
+    font-weight: 950;
+    background: linear-gradient(120deg, #ffffff, #aaa0ff, #5b9cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #969fb2;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 34px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: 13px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    border: none;
+    background: linear-gradient(135deg, #7562ff, #318bff);
+    box-shadow: 0 15px 40px rgba(75, 78, 255, 0.28);
+}
+
+.section {
+    width: min(1100px, calc(100% - 30px));
+    margin: auto;
+    padding: 100px 0;
+}
+
+.label {
+    color: #8174ff;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.title {
+    margin-top: 8px;
+    font-size: clamp(34px, 5vw, 55px);
+    letter-spacing: -2px;
+}
+
+.description {
+    max-width: 750px;
+    margin-top: 15px;
+    color: #8993a8;
+    line-height: 1.75;
+    font-size: 15px;
+}
+
+.license {
+    margin-top: 35px;
+    padding: 35px;
+    border-radius: 22px;
+    border: 1px solid rgba(126, 106, 255, 0.2);
+    background: linear-gradient(145deg, rgba(112, 91, 255, 0.09), rgba(255,255,255,0.025));
+}
+
+.license h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.license p {
+    color: #a3abbd;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.license-code {
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #a99fff;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 35px;
+}
+
+.card {
+    padding: 27px;
+    min-height: 220px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.025);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(120, 100, 255, 0.35);
+    background: rgba(105, 88, 255, 0.06);
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(110, 90, 255, 0.12);
+    color: #b5adff;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card p {
+    color: #8993a8;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.rules {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.rule {
+    display: flex;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.025);
+}
+
+.cross {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 70, 95, 0.1);
+    color: #ff8396;
+    font-weight: 900;
+}
+
+.rule p {
+    color: #a3abbd;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.warning {
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 75, 95, 0.2);
+    background: rgba(255, 70, 90, 0.045);
+}
+
+.warning h3 {
+    color: #ff8798;
+    margin-bottom: 9px;
+}
+
+.warning p {
+    color: #a6aebf;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+footer {
+    width: min(1100px, calc(100% - 30px));
+    margin: 30px auto 0;
+    padding: 35px 0 45px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #70798d;
+    font-size: 12px;
+}
+
+footer strong {
+    display: block;
+    color: #d2d6e1;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 800px) {
+    .nav-links {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .rules {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .license {
+        padding: 25px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<nav class="navbar">
+
+```
+<div class="logo">
+
+    <div class="logo-box">
+        A
+    </div>
+
+    <div class="logo-text">
+        Axon AI Support
+        <span>OFFICIAL LICENSE</span>
+    </div>
+
+</div>
+
+<div class="nav-links">
+    <a href="#lizenz">Lizenz</a>
+    <a href="#regeln">Regeln</a>
+    <a href="#schutz">Schutz</a>
+</div>
+```
+
+</nav>
+
+<header class="hero">
+
+```
+<div class="hero-content">
+
+    <div class="badge">
+        <span class="badge-dot"></span>
+        Offizielle Axon AI Support Lizenz
+    </div>
+
+    <h1>
+        AXON AI<br>
+        SUPPORT
+    </h1>
+
+    <p>
+        Offizielle Informationen über Eigentum,
+        Copyright, Nutzung und Lizenzierung des
+        Axon AI Support Projekts.
+    </p>
+
+    <div class="buttons">
+
+        <a class="button primary" href="#lizenz">
+            Lizenz ansehen
+        </a>
+
+        <a class="button" href="#regeln">
+            Nutzungsregeln
+        </a>
+
+    </div>
+
+</div>
+```
+
+</header>
+
+<section class="section" id="lizenz">
+
+```
+<div class="label">
+    01 · Eigene Lizenz
+</div>
+
+<h2 class="title">
+    Axon AI Support License
+</h2>
+
+<p class="description">
+    Diese Lizenz definiert die erlaubte Nutzung der
+    von Axon AI Support bereitgestellten Software,
+    Bots, Systeme, Designs, Texte und sonstigen
+    Projektbestandteile.
+</p>
+
+<div class="license">
+
+    <h3>
+        AXON AI SUPPORT – PRIVATE USE LICENSE
+    </h3>
+
+    <p>
+        Copyright © 2026 Axon AI Support.
+        Alle Rechte vorbehalten.
+        Die Bestandteile des Axon AI Support Projekts
+        bleiben Eigentum von Axon AI Support, soweit
+        nicht ausdrücklich etwas anderes angegeben ist.
+    </p>
+
+    <br>
+
+    <p>
+        Die Nutzung eines von Axon AI Support
+        bereitgestellten Systems stellt keine Übertragung
+        des Eigentums, des Quellcodes oder sonstiger
+        Rechte dar.
+    </p>
+
+    <br>
+
+    <p>
+        Eine Nutzung ist ausschließlich im Rahmen der
+        von Axon AI Support ausdrücklich vorgesehenen
+        Verwendung gestattet. Weitergehende Rechte
+        entstehen nicht automatisch durch die Nutzung
+        oder Bereitstellung des Systems.
+    </p>
+
+    <div class="license-code">
+        AXON-AI-SUPPORT-PRIVATE-USE-2026
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section" id="regeln">
+
+```
+<div class="label">
+    02 · Nutzungsregeln
+</div>
+
+<h2 class="title">
+    Was ist nicht erlaubt?
+</h2>
+
+<p class="description">
+    Ohne ausdrückliche schriftliche Erlaubnis von
+    Axon AI Support sind insbesondere folgende
+    Handlungen untersagt:
+</p>
+
+<div class="rules">
+
+    <div class="rule">
+        <div class="cross">×</div>
+        <p>
+            Den Bot oder seine Bestandteile auf einem
+            eigenen Server zu hosten oder eigenständig
+            weiterzubetreiben.
+        </p>
+    </div>
+
+    <div class="rule">
+        <div class="cross">×</div>
+        <p>
+            Den Quellcode, Dateien oder interne Systeme
+            zu kopieren oder weiterzugeben.
+        </p>
+    </div>
+
+    <div class="rule">
+        <div class="cross">×</div>
+        <p>
+            Den Bot für mehrere eigene Projekte oder
+            andere Zwecke einzusetzen.
+        </p>
+    </div>
+
+    <div class="rule">
+        <div class="cross">×</div>
+        <p>
+            Copyright-, Lizenz- oder Eigentumshinweise
+            zu entfernen oder zu verändern.
+        </p>
+    </div>
+
+    <div class="rule">
+        <div class="cross">×</div>
+        <p>
+            Das Projekt oder Bestandteile davon zu
+            verkaufen, zu vermieten oder weiterzuverkaufen.
+        </p>
+    </div>
+
+    <div class="rule">
+        <div class="cross">×</div>
+        <p>
+            Eine Kopie oder im Wesentlichen identische
+            Version ohne Erlaubnis zu erstellen.
+        </p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section" id="schutz">
+
+```
+<div class="label">
+    03 · Projektschutz
+</div>
+
+<h2 class="title">
+    Schutz des Projekts
+</h2>
+
+<p class="description">
+    Axon AI Support behält sich die Rechte an eigenen
+    Inhalten, Designs, Softwarebestandteilen und
+    Systemen vor.
+</p>
+
+<div class="cards">
+
+    <div class="card">
+
+        <div class="icon">
+            ©
+        </div>
+
+        <h3>
+            Copyright
+        </h3>
+
+        <p>
+            Die veröffentlichten und nicht veröffentlichten
+            Projektbestandteile dürfen nicht als eigenes
+            Werk ausgegeben werden.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="icon">
+            🔒
+        </div>
+
+        <h3>
+            Eigentum
+        </h3>
+
+        <p>
+            Die Nutzung des Projekts bedeutet keine
+            Übertragung von Eigentums- oder Urheberrechten.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="icon">
+            !
+        </div>
+
+        <h3>
+            Verstöße
+        </h3>
+
+        <p>
+            Bei vermuteten Verstößen können geeignete
+            technische oder rechtliche Schritte geprüft
+            werden.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="warning">
+
+    <h3>
+        Wichtiger Hinweis
+    </h3>
+
+    <p>
+        Diese Lizenz ist eine von Axon AI Support
+        formulierte Nutzungsregelung. Sie ersetzt keine
+        individuelle Rechtsberatung. Für eine rechtlich
+        verbindliche Lizenzvereinbarung sollte bei Bedarf
+        eine qualifizierte Rechtsberatung eingeholt werden.
+    </p>
+
+</div>
+```
+
+</section>
+
+<footer>
+
+```
+<div>
+    <strong>Axon AI Support</strong>
+    Official License & Copyright
+</div>
+
+<div>
+    © 2026 Axon AI Support<br>
+    Alle Rechte vorbehalten.
+</div>
+```
+
+</footer>
+
+<script>
+const container = document.getElementById("particles");
+
+for (let i = 0; i < 50; i++) {
+
+    const particle = document.createElement("div");
+
+    particle.className = "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (7 + Math.random() * 12) + "s";
+
+    particle.style.animationDelay =
+        (-Math.random() * 15) + "s";
+
+    particle.style.opacity =
+        0.2 + Math.random() * 0.7;
+
+    container.appendChild(particle);
+}
+</script>
+
+</body>
+</html>
